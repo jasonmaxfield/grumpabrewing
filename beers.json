@@ -1,0 +1,44 @@
+const beers = {
+  "1000": {
+    "type": "Ale",
+    "brewed_on": "08/06/2020",
+    "abv": "5.5",
+    "ibu": "30",
+    "grumpiness": "40"
+  },
+  "1001": {
+    "type": "Ale",
+    "brewed_on": "08/06/2020",
+    "abv": "5.5",
+    "ibu": "30",
+    "grumpiness": "40"
+  },
+  "1002": {
+    "type": "Ale",
+    "brewed_on": "08/06/2020",
+    "abv": "5.5",
+    "ibu": "30",
+    "grumpiness": "40"
+  },
+  "1003": {
+    "type": "Lager",
+    "brewed_on": "08/16/2020",
+    "abv": "4.3",
+    "ibu": "20",
+    "grumpiness": "70"
+  },
+  "1004": {
+    "type": "Lager",
+    "brewed_on": "08/16/2020",
+    "abv": "4.3",
+    "ibu": "20",
+    "grumpiness": "70"
+  },
+  "1005": {
+    "type": "Lager",
+    "brewed_on": "08/16/2020",
+    "abv": "4.3",
+    "ibu": "20",
+    "grumpiness": "70"
+  }
+}
