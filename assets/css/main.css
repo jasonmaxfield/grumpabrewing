@@ -335,6 +335,7 @@ input, select, textarea {
 		grid-template-rows: 1fr;
 		gap: 1px 1px;
 		grid-template-areas: "date abv ibu grumpiness";
+		margin: 0 0 3rem 0;
 	  }
 	  
 	.date { grid-area: date; }
