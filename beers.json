@@ -1,20 +1,20 @@
 const beers = {
   "1000": {
-    "type": "Ale",
+    "type": "American Ale",
     "brewed_on": "08/06/2020",
     "abv": "5.5",
     "ibu": "30",
     "grumpiness": "40"
   },
   "1001": {
-    "type": "Ale",
+    "type": "American Ale",
     "brewed_on": "08/06/2020",
     "abv": "5.5",
     "ibu": "30",
     "grumpiness": "40"
   },
   "1002": {
-    "type": "Ale",
+    "type": "American Ale",
     "brewed_on": "08/06/2020",
     "abv": "5.5",
     "ibu": "30",

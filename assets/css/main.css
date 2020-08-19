@@ -313,6 +313,44 @@ input, select, textarea {
 		color: #212931;
 	}
 
+	h1.flag-font {
+		font-size: 6rem;
+		background-color:#fff; 
+		overflow:hidden;
+		display: block; 
+		font-weight:bold;
+		color:transparent;
+		text-align: center;
+	}
+
+	span.flag-font {
+		background: url('../../images/flag2.jpg') -1rem -1rem;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+		display: block;
+	}
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+		gap: 1px 1px;
+		grid-template-areas: "date abv ibu grumpiness";
+	  }
+	  
+	.date { grid-area: date; }
+	
+	.abv { grid-area: abv; }
+	
+	.ibu { grid-area: ibu; }
+	
+	.grumpiness { grid-area: grumpiness; }
+
+	.date, .abv, .ibu, .grumpiness {
+		display: block;
+		margin: 0 auto;
+	}
+
 	blockquote {
 		border-left-color: #eeeeee;
 	}

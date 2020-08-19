@@ -35,13 +35,40 @@
 					<div id="main">
 
 						<!-- Post -->
-							<section class="post">
+							<section class="post hidden" id="beer-info">
 								<header class="major">
-									<span class="date">Coming Soon</span>
+									<span class="date" id="beer-id">test</span>
 								</header>
+								<h1 class="flag-font"><span class="flag-font" id="beer-type"></span></h1>
+								<div class="grid-container">
+									<div class="date">
+										<h5>Brewed on</h5>
+										<p id="brew-date"></p>
+									</div>
+									<div class="abv">
+										<h5>ABV</h5>
+										<p id="beer-abv"></p>
+									</div>
+									<div class="ibu">
+										<h5>IBU</h5>
+										<p id="beer-ibu"></p>
+									</div>
+									<div class="grumpiness">
+										<h5>Grumpiness</h5>
+										<p id="beer-grumpiness"></p>
+									</div>
+								  </div>
 							</section>
+							<section class="post">
+								<h2 class="hidden" id="invalid-id">Invalid number</h2>
+								<input type="text" name="bottle-number" id="bottle-number" value="" placeholder="Number" />
+								<br />
+								<span onclick="checkBeer()" class="button">Check</span>
+							</section>
+							
 
 					</div>
+
 
 				<!-- Copyright -->
 					<div id="copyright">

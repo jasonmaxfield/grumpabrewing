@@ -266,7 +266,9 @@
 window.onload = function() {
 	let params = (new URL(document.location)).searchParams;
 	let beerID = params.get("beerID");
-	getInfo(beerID);
+	if (beerID > ""){
+		getInfo(beerID);
+	}
   };
 
 
@@ -278,26 +280,26 @@ function checkBeer() {
   }
 
 function getInfo(beerID) {
-	if (beerID <= "") {
-		return;
-	}
 	try {
-		readJson(beerID);
+		beer = beers[beerID];
+		
+		document.getElementById("beer-id").textContent = beerID;
+		document.getElementById("beer-type").textContent = beer.type;
+		document.getElementById("brew-date").textContent = beer.brewed_on;
+		document.getElementById("beer-abv").textContent = beer.abv;
+		document.getElementById("beer-ibu").textContent = beer.ibu;
+		document.getElementById("beer-grumpiness").textContent = beer.grumpiness + "%";
+		
+
+		document.getElementById("invalid-id").style.display = "none";
+		document.getElementById("bottle-number").value = beerID;
+		document.getElementById("beer-info").style.display = "block";
+
 	}
 	catch {
 		invalidBeer();
 		return;
 	}
-	document.getElementById("invalid-id").style.display = "none";
-	document.getElementById("bottle-number").value = beerID;
-	document.getElementById("beer-info").style.display = "block";
-	document.getElementById("beer-id").textContent = beerID;
-	
-}
-
-function readJson(beerID) {
-		beer = beers[beerID];
-		document.getElementById("beer-type").textContent = beers[beerID].type;
 	
 }
 
