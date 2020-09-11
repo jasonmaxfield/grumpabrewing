@@ -320,6 +320,7 @@ input, select, textarea {
 		font-weight:bold;
 		color:transparent;
 		text-align: center;
+		margin-bottom: 3rem;
 	}
 
 	span.flag-font {
@@ -331,24 +332,41 @@ input, select, textarea {
 
 	.grid-container {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
 		gap: 1px 1px;
-		grid-template-areas: "date abv ibu grumpiness";
-		margin: 0 0 3rem 0;
+		grid-template-areas: "brew-date keg-date bottle-date" "abv ibu grumpiness";
 	  }
 	  
-	.date { grid-area: date; }
-	
+	.brew-date { 
+		grid-area: brew-date;
+		grid-column: 1 / span 2;
+	}
+	  
+	.keg-date { 
+		grid-area: keg-date;
+		grid-column: 0;
+	}
+	  
+	.bottle-date { 
+		grid-area: bottle-date;
+		grid-column: 2 / span 2;
+	 }
+	  
 	.abv { grid-area: abv; }
-	
+	  
 	.ibu { grid-area: ibu; }
-	
+	  
 	.grumpiness { grid-area: grumpiness; }
-
-	.date, .abv, .ibu, .grumpiness {
+	  
+	.brew-date, .bottle-date, .abv, .ibu, .grumpiness {
 		display: block;
 		margin: 0 auto;
+		text-align: center;
+	}
+	
+	.brew-date, .bottle-date, .abv, .ibu, .grumpiness > p{
+		text-align: center;
 	}
 
 	blockquote {

@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" type="image/png" href="images/favicon.png"/>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -41,9 +42,13 @@
 								</header>
 								<h1 class="flag-font"><span class="flag-font" id="beer-type"></span></h1>
 								<div class="grid-container">
-									<div class="date">
+									<div class="brew-date">
 										<h5>Brewed on</h5>
 										<p id="brew-date"></p>
+									</div>
+									<div class="bottle-date">
+										<h5>Bottled on</h5>
+										<p id="bottle-date"></p>
 									</div>
 									<div class="abv">
 										<h5>ABV</h5>
@@ -85,7 +90,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script type="text/javascript" src="beers.json"></script>
+			<script src="assets/js/beercheck.js"></script>
+			<script async defer src="https://apis.google.com/js/api.js"></script>
 
 	</body>
 </html>
