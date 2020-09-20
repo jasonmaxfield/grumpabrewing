@@ -382,6 +382,31 @@ input, select, textarea {
 		border-bottom-color: #eeeeee;
 	}
 
+	@media screen and (max-width: 736px) {
+
+		h1 {
+			font-size: 2rem;
+		}
+
+		.brew-date, .bottle-date, .abv, .ibu, .grumpiness > p{
+			font-size: 1.2rem;
+		}
+
+		.brew-date { 
+			padding-left: -1rem;
+		}
+		  
+		.bottle-date { 
+			padding-left: 1rem;
+		 }
+		  
+
+		span.flag-font {
+			background-size: 50px 100px;
+		}
+
+	}	
+
 /* Row */
 
 	.row {
