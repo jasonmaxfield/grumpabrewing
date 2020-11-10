@@ -335,23 +335,14 @@ input, select, textarea {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
 		gap: 1px 1px;
-		grid-template-areas: "brew-date keg-date bottle-date" "abv ibu grumpiness";
+		grid-template-areas: "brew-date bottle-date cap-color" "abv ibu grumpiness";
 	  }
 	  
-	.brew-date { 
-		grid-area: brew-date;
-		grid-column: 1 / span 2;
-	}
+	.brew-date { grid-area: brew-date; }
 	  
-	.keg-date { 
-		grid-area: keg-date;
-		grid-column: 0;
-	}
-	  
-	.bottle-date { 
-		grid-area: bottle-date;
-		grid-column: 2 / span 2;
-	 }
+	.bottle-date { grid-area: bottle-date; }
+
+	.cap-color { grid-area: cap-color; }
 	  
 	.abv { grid-area: abv; }
 	  
@@ -359,13 +350,13 @@ input, select, textarea {
 	  
 	.grumpiness { grid-area: grumpiness; }
 	  
-	.brew-date, .bottle-date, .abv, .ibu, .grumpiness {
+	.grid-item {
 		display: block;
 		margin: 0 auto;
 		text-align: center;
 	}
 	
-	.brew-date, .bottle-date, .abv, .ibu, .grumpiness > p{
+	.grid-item p{
 		text-align: center;
 	}
 

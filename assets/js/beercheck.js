@@ -13,7 +13,8 @@ window.onload = function() {
 		4: Bottle Date
 		5: ABV
 		6: IBU
-		7: Grumpiness */
+		7: Grumpiness
+		8: Cap Color */
 
 
 var beers = null;
@@ -37,6 +38,7 @@ function showInfo(beerID) {
 		document.getElementById("beer-type").textContent = beer[2];
 		document.getElementById("brew-date").textContent = beer[3];
 		document.getElementById("bottle-date").textContent = beer[4];
+		document.getElementById("cap-color").textContent = beer[8];
 		document.getElementById("beer-abv").textContent = beer[5];
 		document.getElementById("beer-ibu").textContent = beer[6];
 		document.getElementById("beer-grumpiness").textContent = beer[7];
