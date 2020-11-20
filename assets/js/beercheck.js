@@ -3,8 +3,8 @@ window.onload = function() {
 	let params = (new URL(document.location)).searchParams;
 	capColor = params.get("cap_color");
 	if (capColor != null){
-		console.log("capColor: " + capColor)
-		updateText("Getting beer info...")
+		console.log("capColor: " + capColor);
+		updateText("Getting beer info...");
 	}
   };
 
@@ -36,7 +36,9 @@ function showInfo(capColor) {
 		document.getElementById("beer-abv").textContent = beer[5];
 		document.getElementById("beer-ibu").textContent = beer[6];
 		document.getElementById("beer-grumpiness").textContent = beer[7];
+
 		document.getElementById("beer-info").style.display = "block";
+		document.getElementById("main-text").style.display = "none";
 	}
 	catch {
 		updateText("Something went wrong.");
