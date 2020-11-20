@@ -1,12 +1,17 @@
 window.onload = function() {
 	handleClientLoad();
 	let params = (new URL(document.location)).searchParams;
-	beerID = params.get("beerID");
+	capColor = params.get("cap_color");
+	if (capColor != null){
+		console.log("capColor: " + capColor)
+		updateText("Getting beer info...")
+	}
   };
 
+var capColor;
 
   /** 	beers[x]
-	 	0: bottleID
+	 	0: bottleID (Don't use anymore)
 		1: Type selection (won't be using)
 		2: Type
 		3: Brew Date
@@ -16,25 +21,14 @@ window.onload = function() {
 		7: Grumpiness
 		8: Cap Color */
 
-
-var beers = null;
-var beerID;
-
-function checkBeer() {
-	var beerID = document.getElementById("bottle-number").value;
-	showInfo(beerID);
-  }
-
-function showInfo(beerID) {
+function showInfo(capColor) {
 	if (beers == null){
-		invalidBeer();
+		updateText("Something went wrong.");
 		return;
 	}
 
-	beer = getBeerFromList(beerID);
-
 	try {
-		document.getElementById("beer-id").textContent = beer[0];
+		beer = getBeerFromList(capColor);
 		document.getElementById("beer-type").textContent = beer[2];
 		document.getElementById("brew-date").textContent = beer[3];
 		document.getElementById("bottle-date").textContent = beer[4];
@@ -42,28 +36,22 @@ function showInfo(beerID) {
 		document.getElementById("beer-abv").textContent = beer[5];
 		document.getElementById("beer-ibu").textContent = beer[6];
 		document.getElementById("beer-grumpiness").textContent = beer[7];
-		
-
-		document.getElementById("invalid-id").style.display = "none";
-		document.getElementById("bottle-number").value = beerID;
 		document.getElementById("beer-info").style.display = "block";
-
 	}
 	catch {
-		invalidBeer();
+		updateText("Something went wrong.");
 		return;
 	}
 	
 }
 
-function invalidBeer() {
-	document.getElementById("invalid-id").style.display = "block";
+function updateText(text) {
+	document.getElementById("main-text").textContent = text
 }
 
-function getBeerFromList(beerID){
-	console.log("beers length: " + beers.length)
+function getBeerFromList(capColor){
 	for (i=0;beers.length;i++){
-		if (beers[i][0] == beerID){
+		if (beers[i][8].toLowerCase() == capColor.toLowerCase()){
 			return beers[i];
 		}
 	}
@@ -79,8 +67,8 @@ function makeApiCall() {
 	var request = gapi.client.sheets.spreadsheets.values.get(params);
 	request.then(function(response) {
 	  beers = response.result.values;
-	  if (beerID > ""){
-		showInfo(beerID);
+	  if (capColor > ""){
+		showInfo(capColor);
 	}
 	}, function(reason) {
 	  console.error('error: ' + reason.result.error.message);
