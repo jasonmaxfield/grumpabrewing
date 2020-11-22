@@ -360,6 +360,22 @@ input, select, textarea {
 		text-align: center;
 	}
 
+	.cap-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+  		align-items: center;
+	}
+
+	.cap-item p {
+		margin: auto;
+	}
+
+	.cap-img {
+		height: 250px;
+		width: 250px;
+	}
+
 	blockquote {
 		border-left-color: #eeeeee;
 	}
@@ -394,6 +410,11 @@ input, select, textarea {
 
 		span.flag-font {
 			background-size: 50px 100px;
+		}
+
+		.cap-img {
+			height: 150px;
+			width: 150px;
 		}
 
 	}	

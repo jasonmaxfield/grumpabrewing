@@ -2,10 +2,6 @@ window.onload = function() {
 	handleClientLoad();
 	let params = (new URL(document.location)).searchParams;
 	capColor = params.get("cap_color");
-	if (capColor != null){
-		console.log("capColor: " + capColor);
-		updateText("Getting beer info...");
-	}
   };
 
 var capColor;
@@ -22,11 +18,6 @@ var capColor;
 		8: Cap Color */
 
 function showInfo(capColor) {
-	if (beers == null){
-		updateText("Something went wrong.");
-		return;
-	}
-
 	try {
 		beer = getBeerFromList(capColor);
 		document.getElementById("beer-type").textContent = beer[2];
@@ -38,17 +29,11 @@ function showInfo(capColor) {
 		document.getElementById("beer-grumpiness").textContent = beer[7];
 
 		document.getElementById("beer-info").style.display = "block";
-		document.getElementById("main-text").style.display = "none";
 	}
 	catch {
-		updateText("Something went wrong.");
 		return;
 	}
-	
-}
-
-function updateText(text) {
-	document.getElementById("main-text").textContent = text
+	window.scrollTo(0, 0);
 }
 
 function getBeerFromList(capColor){
